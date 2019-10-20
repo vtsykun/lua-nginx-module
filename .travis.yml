@@ -122,7 +122,7 @@ script:
   - cd ..
   - export PATH=$PWD/work/nginx/sbin:$PWD/openresty-devel-utils:$PATH
   - export NGX_BUILD_CC=$CC
-  - sh util/build.sh $NGINX_VERSION > build.log 2>&1 || (cat build.log && exit 1)
+  - sh util/build.sh $NGINX_VERSION
   - nginx -V
   - ldd `which nginx`|grep -E 'luajit|ssl|pcre'
   - export LD_PRELOAD=$PWD/mockeagain/mockeagain.so
